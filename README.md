@@ -1,24 +1,31 @@
-# README
+# Happy Birthday email sender app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application will send a birthday congratulations mail to members of the Database
+and notifications to all the rest of the members.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+'''
+$bundle install --without production
+'''
+Next migrate the database:
 
-* Configuration
+'''
+$rails db:migrate
+'''
 
-* Database creation
+Finally, run the test suite to verify that everything is working correctly:
 
-* Database initialization
+'''
+$rails test
+'''
 
-* How to run the test suite
+If the test suite passes, you'll be ready to run the app in a local server:
 
-* Services (job queues, cache servers, search engines, etc.)
+'''
+$rails server
+'''
 
-* Deployment instructions
-
-* ...
+For more information contact Luis Fernando Flores Oviedo
