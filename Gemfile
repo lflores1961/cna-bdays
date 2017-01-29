@@ -2,9 +2,20 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails',                    '5.0.1'
+gem 'rails',                       '5.0.1'
+# Use bcrypt to encode password hashes
+gem 'bcrypt',                      '3.1.11'
+# use faker to fill development database
+gem 'faker',                       '1.6.6'
+# Use will-paginate to divide users listing into pages
+gem 'will_paginate',               '3.1.0'
+gem 'bootstrap-will_paginate',     '0.0.10'
+# Use Bootstrap-sass for responsive site
+gem 'bootstrap-sass',              '3.3.6'
+# use simple calendar github.com/excid3/simple_calendar
+gem 'simple_calendar',             '2.0'
 # Use Puma as the app server
-gem 'puma',                     '3.4.0'
+gem 'puma',                        '3.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails',               '5.0.6'
 # Use Uglifier as compressor for JavaScript assets

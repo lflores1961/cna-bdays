@@ -1,0 +1,259 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Variables & Mixins */
+
+$my-green: #D2691E;
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+/* universal */
+
+body {
+  padding-top: 0px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $gray-light;
+  background-color: $my-green;
+  a {
+    color: $gray-light;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+      color: $gray-light;
+    }
+  }
+}
+
+a:link {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.bg-1 {
+  background-color: $my-green; /* Green */
+  color: #ffffff;
+}
+
+.bg-2 {
+  background-color: #FFE4B5;
+  color: #ffffff;
+  /* margin-top: 1px; */
+}
+
+.container-fluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.btn-xs {
+    color: $my-green;
+    background-color: $gray-light;
+    padding: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    a:link {
+      color: $my-green;
+    }
+  }
+
+.btn-default {
+  color: white;
+  background-color: $my-green;
+  border-color: $my-green;
+  a:visited {
+    color: white;
+  }
+}
+
+.cust-button {
+  width: 220px !important;
+  margin: 7px 2px;
+}
+
+.button:visited {
+    color: auto;
+}
+
+/* footer */
+
+
+
+.field-tm {
+  color: #ffffff;
+  padding-bottom: 0px;
+  padding-top: 1px;
+}
+
+table, th, td {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    border-spacing: 10px;
+    background-color: $my-green;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th,td {
+    background-color: $my-green;
+    color: white;
+    text-align: left;
+  }
+
+p#notice {
+  color: $my-green;
+}
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  color:  #FFE4B5;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  padding-left: 0px;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+/* Header */
+
+#logo {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.jumbotron {
+  height: 100%;
+  width: 100%;
+  color: $my-green;
+  h1 {
+    text-align: center;
+    vertical-align: top;
+    font-size: 20px;
+  }
+}
+
+
+/* Forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  background-color: $gray-light;
+  width: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #80002a;
+  margin-bottom: 10px;
+  border: 1px solid #80002a;
+  border-radius: 5px;
+  padding: 1px;
+  ul {
+    color: #80002a;
+    margin: 0 0 30px 0;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+  li {
+    overflow: auto;
+    padding: 10px 10px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: #80002a;
+  }
+}
+
+.navbar-right {
+  margin-right: 5px;
+}
+
+/* Miscelaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box-sizing;
+}

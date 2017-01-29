@@ -1,6 +1,6 @@
 # Happy Birthday email sender app
 
-This application will send a birthday congratulations mail to members of the Database
+This application will automatically send a birthday congratulations mail to members of the Database
 and notifications to all the rest of the members.
 
 ## Getting started
