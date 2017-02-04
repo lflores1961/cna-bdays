@@ -7,13 +7,13 @@ def setup
 end
 
   test "should get home" do
-    get static_pages_home_url
+    get root_path
     assert_response :success
     assert_select "title", "Inicio | #{@base_title}"
   end
 
   test "should get help" do
-    get static_pages_help_url
+    get help_path
     assert_response :success
     assert_select "title", "Ayuda | #{@base_title}"
   end

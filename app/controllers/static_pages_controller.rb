@@ -2,9 +2,9 @@ class StaticPagesController < ApplicationController
   def home
     @options = [
       {:letrero => "Editar correo de Cumpleaños",       :ruta => '#'},
-      {:letrero => "Editar correo de Notificación",     :ruta => '#'},
-      {:letrero => "Registros de Notarios",             :ruta => '#'},
-      {:letrero => "Modificar datos de administrador",  :ruta => '#'}
+      {:letrero => "Editar correo de Notificación",      :ruta => '#'},
+      {:letrero => "Registros de Notarios",                    :ruta => '#'},
+      {:letrero => "Usuarios",                                              :ruta => '#'}
     ]
   end
 
