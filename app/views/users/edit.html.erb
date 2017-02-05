@@ -1,6 +1,21 @@
-<h1>Editing User</h1>
+<% provide(:title, "Usuarios") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
 
-<%= render 'form', user: @user %>
+    </div>
+    <div class="col-md-6">
+      <h2>Modificar datos de usuario</h2>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+      <%= render 'form', user: @user %>
+
+    </div>
+    <div class="col-md-2">
+      <p>Navegación</p>
+      <nav class="nav flex-column">
+        <%= link_to 'Usuarios', users_path, class: "nav-link" %><br>
+        <%= link_to 'Inicio', root_path, class: "nav-link" %>
+      </nav>
+    </div>
+  </div>
+</div>

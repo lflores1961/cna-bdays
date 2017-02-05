@@ -26,6 +26,6 @@ module ApplicationHelper
 
   # THIS MUST BE REPLACED BY THE REAL METHOD
   def logged_in?
-    false
+    true
   end
 end
