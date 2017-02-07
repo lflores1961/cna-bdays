@@ -52,7 +52,7 @@ footer {
 }
 
 a:link {
-  color: white;
+  color: #FFE4B5;
 }
 
 a:active {
@@ -68,12 +68,12 @@ a:active {
 
 .bg-1 {
   background-color: $my-green; /* Green */
-  color: #ffffff;
+  color: #FFE4B5;
 }
 
 .bg-2 {
   background-color: #FFE4B5;
-  color: #ffffff;
+  color: #cc9900;
   /* margin-top: 1px; */
 }
 
@@ -84,7 +84,7 @@ a:active {
 }
 
 .btn-xs {
-    color: $my-green;
+    color: #FFE4B5;
     background-color: $gray-light;
     padding: 2px;
     padding-top: 1px;
@@ -95,12 +95,9 @@ a:active {
   }
 
 .btn-default {
-  color: white;
+  color: #FFE4B5;
   background-color: $my-green;
   border-color: $my-green;
-  a:visited {
-    color: white;
-  }
 }
 
 .cust-button {
@@ -142,7 +139,7 @@ table.center {
 
 th,td {
     background-color: $my-green;
-    color: white;
+    color: #FFE4B5;
     text-align: left;
   }
 
@@ -197,7 +194,7 @@ h2 {
   h1 {
     text-align: center;
     vertical-align: top;
-    font-size: 20px;
+    font-size: 40px;
   }
 }
 
