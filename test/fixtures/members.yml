@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 1
+  nombre: MyString
+  email: MyString
+  fechaNacimiento: 2017-02-07
+  presidente: false
+
+two:
+  numero: 1
+  nombre: MyString
+  email: MyString
+  fechaNacimiento: 2017-02-07
+  presidente: false

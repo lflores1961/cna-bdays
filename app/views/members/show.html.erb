@@ -1,0 +1,43 @@
+<% provide(:title, "Notarios") %>
+<div class="container">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+    <h2>Datos del Notario</h2>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <td><strong>Numero:</strong></td>
+          <td><%= @member.numero %></td>
+        </tr>
+        <tr>
+          <td><strong>Nombre:</strong></td>
+          <td><%= @member.nombre %></td>
+        </tr>
+        <tr>
+          <td><strong>Email:</strong></td>
+          <td><%= @member.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Fecha de nacimiento:</strong></td>
+          <td><%= @member.fechaNacimiento %></td>
+        </tr>
+        <tr>
+          <td><strong>Presidente:</strong></td>
+          <% presi = @member.presidente ? "Si" : "No" %>
+          <td><%= presi %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-2">
+      <p>Navegación</p>
+      <nav class="nav flex-column">
+        <%= link_to 'Modificar', edit_member_path(@member), class: "nav-link" %><br>
+        <%= link_to 'Notarios', members_path, class: "nav-link" %><br>
+        <%= link_to 'Inicio', root_path, class: "nav-link" %>
+      </nav>
+    </div>
+  </div>
+</div>
