@@ -25,7 +25,7 @@
   <div class="form-group row">
     <%= f.label :fechaNacimiento, "Fecha de Nacimiento", class: "col-sm-2 form-control-label" %>
     <div class="col-sm-10">
-      <%= f.date_select :fechaNacimiento, class: "form-control" %>
+      <%= f.date_select :fechaNacimiento, discard_year: true, class: "form-control" %>
     </div>
   </div>
 

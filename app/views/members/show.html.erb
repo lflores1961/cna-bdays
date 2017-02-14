@@ -22,7 +22,7 @@
         </tr>
         <tr>
           <td><strong>Fecha de nacimiento:</strong></td>
-          <td><%= @member.fechaNacimiento %></td>
+          <td><%= @member.fechaNacimiento.to_formatted_s(:short) %></td>
         </tr>
         <tr>
           <td><strong>Presidente:</strong></td>

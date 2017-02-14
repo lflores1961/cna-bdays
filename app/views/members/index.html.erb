@@ -27,7 +27,7 @@
               <td><%= member.numero %></td>
               <td><%= member.nombre %></td>
               <td><%= member.email %></td>
-              <td><%= member.fechaNacimiento %></td>
+              <td><%= member.fechaNacimiento.to_formatted_s(:short) %></td>
               <% presi = member.presidente ? "Si" : "No" %>
               <td><%= presi %></td>
               <td><%= link_to '', member, class: "glyphicon glyphicon-eye-open" %></td>
