@@ -2,14 +2,14 @@
 
 one:
   numero: 1
-  nombre: MyString
-  email: MyString
+  nombre: Juan
+  email: juan@example.com
   fechaNacimiento: 2017-02-07
   presidente: false
 
 two:
-  numero: 1
-  nombre: MyString
-  email: MyString
+  numero: 2
+  nombre: Pedro
+  email: pedro@example.com
   fechaNacimiento: 2017-02-07
   presidente: false

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get     '/login',       to: 'sessions#new'
   post    '/login',       to: 'sessions#create'
   delete  '/logout',      to: 'sessions#destroy'
+  get     '/mensaje/:tipo', to: 'mensajes#edit', as: 'edit_mensaje'
+  patch   '/mensaje/:tipo', to: 'mensajes#update'
 end

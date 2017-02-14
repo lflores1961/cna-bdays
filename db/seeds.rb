@@ -5,7 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name:                    "Luis Fernando Flores",
-             email:                   "fernando.flores1961@gmail.com",
-             password:                "fernando96",
-             password_confirmation:   "fernando96")
+admin = User.find_by(email: 'fernando.flores1961@gmail.com')
+if admin.nil?
+  User.create!(name:                    "Luis Fernando Flores",
+               email:                   "fernando.flores1961@gmail.com",
+               password:                "fernando96",
+               password_confirmation:   "fernando96")
+end
+
+
+mensajes = {'cumpleaños' => "Mensaje de cumpleaños", 'notificación' => "Mensaje para notificación de cumpleaños"}
+mensajes.each do |tip, mens|
+  Mensaje.create!(tipo: tip, texto: mens)
+end

@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails',                       '5.0.1'
 # Use bcrypt to encode password hashes
 gem 'bcrypt',                      '3.1.11'
+# Use birthday gem to check members table
+gem 'birthday',                    '~> 0.3.0'
 # use faker to fill development database
 gem 'faker',                       '1.6.6'
 # Use will-paginate to divide users listing into pages
