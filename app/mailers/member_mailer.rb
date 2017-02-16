@@ -7,6 +7,7 @@ class MemberMailer < ApplicationMailer
   #
   def cumple(miembro)
     @miembro = miembro
+    @presi = Member.find_by(presidente: true)
     @mensaje = Mensaje.find_by(tipo: 'cumpleaños')
     mail to: miembro.email, subject: "¡Feliz cumpleaños!"
 

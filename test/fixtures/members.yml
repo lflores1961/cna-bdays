@@ -13,3 +13,10 @@ two:
   email: pedro@example.com
   fechaNacimiento: 2017-02-07
   presidente: false
+
+three:
+  numero: 3
+  nombre: Carlos
+  email: carlos@example.com
+  fechaNacimiento: 2017-05-03
+  presidente: true

@@ -4,6 +4,7 @@ class MemberMailerPreview < ActionMailer::Preview
   # Preview this email at http://localhost:3000/rails/mailers/member_mailer/cumple
   def cumple
     member = Member.first
+    @presi = Member.find_by(presidente: true)
     @mensaje = Mensaje.find_by(tipo: 'cumpleaños').texto
     MemberMailer.cumple(member)
 
