@@ -3,15 +3,15 @@ class Member < ApplicationRecord
 
   def self.cumplen
     miembros = Member.all
-    cumpleaneros = []
+    @cumpleaneros = []
     Time::DATE_FORMATS[:d_and_m] = '%d %b'
     fecha_hoy = Time.now.to_formatted_s(:d_and_m)
     miembros.each do |miembro|
       if miembro.fechaNacimiento.to_formatted_s(:short) == fecha_hoy
-        cumpleaneros << miembro
+        @cumpleaneros << miembro
       end
     end
-    return cumpleaneros
+    return @cumpleaneros
   end
 
   # Do the birthay notifications
@@ -20,10 +20,10 @@ class Member < ApplicationRecord
     if @cumpleas.any?
       @members = Member.all
       @cumpleas.each do |cumplea|
-        UserMailer.cumple(cumplea).deliver_now
-        notifica = @members - cumplea
+        MemberMailer.cumple(cumplea).deliver_now
+        notifica = @members.select { |item| item != cumplea }
         notifica.each do |noti|
-          UserMailer.notifica_cumple(cumplea, noti).deliver_now
+          MemberMailer.notifica_cumple(cumplea, noti).deliver_now
         end
       end
     end
