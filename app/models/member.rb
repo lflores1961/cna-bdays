@@ -20,10 +20,10 @@ class Member < ApplicationRecord
     if @cumpleas.any?
       @members = Member.all
       @cumpleas.each do |cumplea|
-        UserMailer.cumple(cumplea)
+        UserMailer.cumple(cumplea).deliver_now
         notifica = @members - cumplea
         notifica.each do |noti|
-          UserMailer.notifica_cumple(cumplea, noti)
+          UserMailer.notifica_cumple(cumplea, noti).deliver_now
         end
       end
     end
