@@ -10,9 +10,12 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  host = 'cna-bdays.herokuapp.com'
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.action_controller.asset_host = host
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -61,7 +64,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'cna-bdays.herokuapp.com'
+
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address                 => 'smtp.sendgrid.net',
@@ -70,8 +73,9 @@ Rails.application.configure do
     :user_name               => ENV['SENDGRID_USERNAME'],
     :password                => ENV['SENDGRID_PASSWORD'],
     :domain                  => 'heroku.com',
-    :enable_starttls_auto    => true 
+    :enable_starttls_auto    => true
   }
+  config.action_mailer.asset_host = host
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
