@@ -19,12 +19,14 @@ class Member < ApplicationRecord
     @cumpleas = Member.cumplen
     if @cumpleas.any?
       @members = Member.all
+      @admin = User.first
       @cumpleas.each do |cumplea|
         MemberMailer.cumple(cumplea).deliver_now
         notifica = @members.select { |item| item != cumplea }
         notifica.each do |noti|
           MemberMailer.notifica_cumple(cumplea, noti).deliver_now
         end
+        MemberMailer.notifica_cumple(cumplea, @admin.email).deliver_now
       end
     end
 
