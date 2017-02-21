@@ -5,10 +5,10 @@ class MemberMailer < ApplicationMailer
   #
   #   en.member_mailer.cumple.subject
   #
-  def cumple(miembro)
+  def cumple(miembro, presi, mensaje)
     @miembro = miembro
-    @presi = Member.find_by(presidente: true)
-    @mensaje = Mensaje.find_by(tipo: 'cumpleaños')
+    @presi = presi
+    @mensaje = mensaje
     mail to: miembro.email, subject: "¡Feliz cumpleaños!"
 
   end
@@ -18,10 +18,11 @@ class MemberMailer < ApplicationMailer
   #
   #   en.member_mailer.notifica_cumple.subject
   #
-  def notifica_cumple(cumple, miembro)
+  def notifica_cumple(cumple, miembro, presi, mensaje)
     @cumple = cumple
     @miembro = miembro
-    @mensaje = Mensaje.find_by(tipo: 'notificación')
+    @presi = presi
+    @mensaje = mensaje
     mail to: miembro.email, subject: "Notificación de Cumpleaños"
 
   end

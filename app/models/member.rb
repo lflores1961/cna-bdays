@@ -16,17 +16,20 @@ class Member < ApplicationRecord
 
   # Do the birthay notifications
   def self.aniversarios
-    @cumpleas = Member.cumplen
-    if @cumpleas.any?
-      @members = Member.all
-      @admin = User.first
-      @cumpleas.each do |cumplea|
-        MemberMailer.cumple(cumplea).deliver_now
-        notifica = @members.select { |item| item != cumplea }
+    cumpleas = Member.cumplen
+    if cumpleas.any?
+      members = Member.all
+      admin = User.first
+      presi = Member.find_by(presidente: true)
+      notiMSG = Mensaje.find_by(tipo: 'notificación').texto
+      cumpMSG = Mensaje.find_by(tipo: 'cumpleaños').texto
+      cumpleas.each do |cumplea|
+        MemberMailer.cumple(cumplea, presi, cumpMSG).deliver_now
+        notifica = members.select { |item| item != cumplea }
         notifica.each do |noti|
-          MemberMailer.notifica_cumple(cumplea, noti).deliver_now
+          MemberMailer.notifica_cumple(cumplea, noti, presi, notiMSG).deliver_now
         end
-        MemberMailer.notifica_cumple(cumplea, @admin.email).deliver_now
+        MemberMailer.notifica_cumple(cumplea, admin, presi, notiMSG).deliver_now
       end
     end
 

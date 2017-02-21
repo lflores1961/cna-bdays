@@ -1,7 +1,16 @@
 <%# encoding: utf-8 %>
-<h1>Notificación de cumpleaños</h1>
-
-<p>
-  Le recordamos que el Notario No. <%= @cumple.numero %>, <%= @cumple.nombre %> celebra su cumpleaños el día de hoy.
-</p>
-<p><%= @mensaje.texto %></p>
+<div class="row">
+  <h1>Notificación de cumpleaños</h1>
+</div>
+<div class="row">
+  <p>
+    Le recordamos que el Notario No. <%= @cumple.numero %>, <%= @cumple.nombre %> celebra su cumpleaños el día de hoy.
+  </p>
+  <p><%= @mensaje %></p>
+</div>
+<div class="row center">
+  <p><br> </p>
+  <p>Atentamente</p>
+  <p><%= @presi.nombre %></p>
+  <p>Presidente</p>
+</div>

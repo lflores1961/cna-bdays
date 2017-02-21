@@ -1,8 +1,8 @@
 <%# encoding: utf-8 %>
-  <div class="row bg-2">
+  <div class="row">
     <h2>¡Feliz cumpleaños Notario <%= @miembro.nombre %>!</h2>
     <p>
-      <%= @mensaje.texto.html_safe %>
+      <%= @mensaje.html_safe %>
     </p>
 
   </div>
@@ -10,8 +10,7 @@
 
   </div>
   <div class="row center">
-    <p> </p>
-    <p> </p>
+    <p><br> </p>
     <p>Atentamente</p>
     <p><%= @presi.nombre %></p>
     <p>Presidente</p>
