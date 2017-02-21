@@ -5,10 +5,11 @@
     <h2>Usuarios</h2>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <p>Listado de usuarios administradores de la aplicación.</p>
+      <p>EL usuario en el primer renglón recibirá copia de las notificaciones de cumpleaños.</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <table>
         <thead>
           <tr>
@@ -33,7 +34,9 @@
     <div class="col-md-2">
       <p>Navegación</p>
       <nav class="nav flex-column">
-        <%= link_to 'Inicio', root_path, class: "nav-link" %>
+        <%= link_to 'Inicio', root_path, class: "nav-link" %><br>
+      <br><p>Acciones</p>
+      <%= link_to 'Agregar usuario', new_user_path, class: "btn btn-default" %>
       </nav>
     </div>
   </div>
@@ -41,6 +44,6 @@
 
   <br>
 
-  <%= link_to 'Agregar usuario', new_user_path, class: "btn btn-default" %>
+
 
 </div>
