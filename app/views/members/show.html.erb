@@ -34,10 +34,10 @@
     <div class="col-md-2">
       <p>Navegación</p>
       <nav class="nav flex-column">
-        <%= link_to 'Modificar', edit_member_path(@member), class: "nav-link" %><br>
         <%= link_to 'Notarios', members_path, class: "nav-link" %><br>
         <%= link_to 'Inicio', root_path, class: "nav-link" %>
       </nav>
     </div>
   </div>
+  <%= link_to 'Modificar', edit_member_path(@member), class: "btn btn-default" %>
 </div>

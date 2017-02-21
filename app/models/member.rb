@@ -1,5 +1,7 @@
 class Member < ApplicationRecord
+  default_scope -> { order(:numero) }
   acts_as_birthday :fechaNacimiento
+
 
   def self.cumplen
     miembros = Member.all

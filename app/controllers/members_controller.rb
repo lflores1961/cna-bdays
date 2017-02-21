@@ -28,7 +28,7 @@ class MembersController < ApplicationController
 
       if @member.save
         flash[:success] = "Se agregó exitosamente el registro del Notario."
-        redirect_to @member
+        redirect_to members_url
       else
         render :new
       end
@@ -40,7 +40,7 @@ class MembersController < ApplicationController
   def update
       if @member.update(member_params)
         flash[:success] = "Se actualizó exitosamente el registro del Notario."
-        redirect_to @member
+        redirect_to members_url
       else
         render :edit
       end

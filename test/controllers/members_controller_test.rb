@@ -20,7 +20,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
       post members_url, params: { member: { email: @member.email, fechaNacimiento: @member.fechaNacimiento, nombre: @member.nombre, numero: @member.numero, presidente: @member.presidente } }
     end
 
-    assert_redirected_to member_url(Member.last)
+    assert_redirected_to members_url
   end
 
   test "should show member" do
@@ -35,7 +35,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update member" do
     patch member_url(@member), params: { member: { email: @member.email, fechaNacimiento: @member.fechaNacimiento, nombre: @member.nombre, numero: @member.numero, presidente: @member.presidente } }
-    assert_redirected_to member_url(@member)
+    assert_redirected_to members_url
   end
 
   test "should destroy member" do
