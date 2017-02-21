@@ -12,6 +12,13 @@ class MembersController < ApplicationController
   def show
   end
 
+  # POST /members/import
+  def import
+    Member.import(params[:file])
+    flash[:success] = 'Se ha importado exitosamente el archivo de Notarios a la bse de datos.'
+    redirect_to members_path
+  end
+
   # GET /members/new
   def new
     @member = Member.new

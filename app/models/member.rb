@@ -36,4 +36,12 @@ class Member < ApplicationRecord
     end
 
   end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      member = find_by_id(row["id"]) || new
+      member.attributes = row.to_hash
+      member.save!
+    end
+  end
 end

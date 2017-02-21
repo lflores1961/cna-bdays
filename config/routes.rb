@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :members
+  resources :members do
+    collection { post :import }
+  end
   root 'static_pages#home'
   resources :users
   get    '/help',        to: 'static_pages#help'

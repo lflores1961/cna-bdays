@@ -41,15 +41,19 @@
     <div class="col-md-2">
       <p>Navegación</p>
       <nav class="nav flex-column">
-        <%= link_to 'Inicio', root_path, class: "nav-link" %>
+        <%= link_to 'Inicio', root_path, class: "nav-link" %><br>
+      <br><p>Acciones</p>
+      <%= link_to 'Agregar Notario', new_member_path, class: "btn btn-default" %>
       </nav>
     </div>
   </div>
 </div>
 
+<div class="row">
+    <%= form_tag import_members_path, multipart: true, class: "navbar-form navbar-left search-form" do %>
+    <p>Importar archivo de Notarios en formato CSV</p>
+          <%= file_field_tag :file, class: "form-control" %>
+          <%= submit_tag "Importar", class: "btn btn-default" %>
+    <% end %>
 
-
-
-<br>
-
-<%= link_to 'Agregar Notario', new_member_path, class: "btn btn-default" %>
+</div>
