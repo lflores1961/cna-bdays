@@ -27,8 +27,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'Se creo exitosamente el usuario.'
-      redirect_to @user
+      flash[:success] = 'Se creo exitosamente el registro del usuario.'
+      redirect_to users_path
     else
       render :new
     end
@@ -40,8 +40,8 @@ class UsersController < ApplicationController
   def update
 
     if @user.update(user_params)
-      flash[:success] = 'User was successfully updated.'
-      redirect_to @user
+      flash[:success] = 'Se actualizó exitosamente el registro del usuario.'
+      redirect_to users_path
     else
       render :edit
     end
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    flash[:success] = 'User was successfully destroyed.'
+    flash[:success] = 'Se eliminó exitosamente el registro del usuario.'
     redirect_to users_url
   end
 

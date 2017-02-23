@@ -1,7 +1,43 @@
 <% provide(:title, "Ayuda") %>
 <h1>Ayuda</h1>
 <div class="row">
-  <div class="col col-sm-6">
-    <p>Defina el correo para enviar al cumpleañero y para avisar a los demás.</p>
+  <div class="col-md-2">
+    <p>Tabla de opciones</p>
+  </div>
+  <div class="col-md-8">
+    <table>
+      <tr>
+        <td>Opción</td>
+        <td>Descripción</td>
+      </tr>
+      <tr>
+        <td>Editar Mensaje de Cumpleaños</td>
+        <td><p>Con esta opción edita la parte central del mensaje que llegará al que celebra su cumpleaños.</p>
+        <p>La primera parte del mensaje, el saludo con felicitación está grabado en el código y NO se puede modificar.</p></td>
+      </tr>
+      <tr>
+        <td>Editar mensaje de Notificación</td>
+        <td><p>Podrá modificar la segunda parte del mensaje de noticçficación para los demás miembros del Colegio.</p>
+        <p>La sección donde se muestra el nombre del Notario que cumple años NO se puede modificar.</p></td>
+      </tr>
+      <tr>
+        <td>Registro de Notarios</td>
+        <td><p>Con esta opción usted accede a la lista ordenada de los Notarios asociados al Colegio de Notarios, en cada renglón usted encontrará los iconos para 'Mostrar', 'Modificar' y 'Eliminar' registros de Notarios</p>
+        <p>Además encontrará un botón para 'Agregar Notario' que lo llevará a la pantalla para definir los datos de un nuevo registro de Notario.</p>
+        <p>NOTA: E la pantalla para crear un nuevo registro de Notario se encuentra un campo de selección para definir al Notario que ocupa la presidencia del colegio, este campo sirve para seleccionar el nombre del notario que firma los mensajes.</p></td>
+      </tr>
+      <tr>
+        <td>Usuarios</td>
+        <td><p>Esta opción es donde se crean los registros de los administradores del sistema.</p>
+        <p>El administrador que se encuentre en el primer renglón de la lista, será quién reciba copia de los mensajes de notificación.</p>
+        <p>Los usuarios administradores pueden crear y modificar los elementos de esta aplicación.</p></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-2">
+    <p>Navegación</p>
+    <nav class="nav flex-column">
+      <%= link_to 'Inicio', root_path, class: "nav-link" %><br>
+    </nav>
   </div>
 </div>
