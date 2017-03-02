@@ -1,5 +1,8 @@
 class Member < ApplicationRecord
   default_scope -> { order(:numero) }
+  before_save :downcase_email
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 69 }, format: { with: VALID_EMAIL_REGEX }
   acts_as_birthday :fechaNacimiento
 
 
@@ -44,4 +47,11 @@ class Member < ApplicationRecord
       member.save!
     end
   end
+
+  private
+
+    # Converts email to lowercase
+    def downcase_email
+      email.downcase!
+    end
 end

@@ -22,3 +22,15 @@
 
 #Ignore Spring files.
 /spring/*.pid
+
+# Ignore git ignore..
+/.gitignore
+
+#ignore apps heroku logs
+/appLog.txt
+/appLog.txt*
+/appLog.txt.*
+
+# Ignore VIM's swap files
+/.swp
+/*.swp
