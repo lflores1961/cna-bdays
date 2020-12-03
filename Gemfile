@@ -1,29 +1,33 @@
 source 'https://rubygems.org'
 
+ruby "2.4.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails',                       '5.0.1'
+gem 'rails',                       '~> 5.1'
+# To avoid "`require': cannot load such file -- bootsnap/setup (LoadError)"
+#  as per "https://stackoverflow.com/questions/51493625/new-to-rails-rails-server-error-cannot-load-such-file-bootsnap-setup-load"
+gem 'bootsnap'
 # Use bcrypt to encode password hashes
 gem 'bcrypt',                      '3.1.11'
 # Use birthday gem to check members table
-gem 'birthday',                    '~> 0.3.0'
+gem 'birthday',                    '~> 0.3.1'
 # use faker to fill development database
 gem 'faker',                       '1.6.6'
 # Use will-paginate to divide users listing into pages
-gem 'will_paginate',               '3.1.0'
-gem 'bootstrap-will_paginate',     '0.0.10'
+gem 'will_paginate',               '~> 3.1.0'
+gem 'bootstrap-will_paginate',     '~> 0.0.10'
 # Use Bootstrap-sass for responsive site
-gem 'bootstrap-sass',              '3.3.6'
+gem 'bootstrap-sass',              '~> 3.3.6'
 # use simple calendar github.com/excid3/simple_calendar
-gem 'simple_calendar',             '2.0'
+gem 'simple_calendar',             '~> 2.0'
 # Use Puma as the app server
-gem 'puma',                        '3.4.0'
+gem 'puma',                        '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails',               '5.0.6'
+gem 'sass-rails',               '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier',                 '3.0.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails',             '4.2.1'
+gem 'coffee-rails',             '~> 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -32,7 +36,7 @@ gem 'jquery-rails',             '4.1.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks',               '5.0.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder',                 '2.4.1'
+gem 'jbuilder',                 '~> 2.6.4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -58,7 +62,7 @@ group :development do
 end
 
 group :test do
-  gem 'rails-controller-testing', '0.1.1'
+  gem 'rails-controller-testing', '~> 1.0.3'
   gem 'minitest-reporters',       '1.1.9'
   gem 'guard',                    '2.13.0'
   gem 'guard-minitest',           '2.4.4'
@@ -69,4 +73,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
