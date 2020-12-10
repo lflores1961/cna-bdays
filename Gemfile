@@ -10,7 +10,8 @@ gem 'bootsnap'
 # Use bcrypt to encode password hashes
 gem 'bcrypt',                      '3.1.11'
 # Use birthday gem to check members table
-gem 'birthday',                    '~> 0.3.1'
+#  THIS GEM IS RUBBISH, NEVER DID WORK FOR ME
+# gem 'birthday',                    '~> 0.3.0'
 # use faker to fill development database
 gem 'faker',                       '1.6.6'
 # Use will-paginate to divide users listing into pages
@@ -59,6 +60,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring',                 '1.7.2'
   gem 'spring-watcher-listen',  '2.0.0'
+  # Use pry as rails console
+  gem 'pry-rails'
 end
 
 group :test do

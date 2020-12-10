@@ -3,12 +3,42 @@ class Member < ApplicationRecord
   before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 69 }, format: { with: VALID_EMAIL_REGEX }
-  acts_as_birthday :fechaNacimiento
+  validate :only_one_president_allowed
+  # acts_as_birthday :fechaNacimiento
 
+  # validates :numero, uniqueness: 
+  # { message: -> (object, data) do 
+  #                      ": El número de Notaría #{data[:value]} ya existe. Verifique por favor"
+  #                     end
+  # }
+  # validates :presidente, uniqueness: 
+  # { message: -> (object, data) do 
+  #                      ": Solamente puede haber un presidente. Verifique por favor"
+  #                     end
+  # }
+
+  def only_one_president_allowed
+    conteo = Member.where(presidente: true).count
+    puts "*** Número de presidentes actual: #{conteo}"
+    puts "===== Nombre: #{nombre} --> Presidente: #{presidente}"
+    if conteo == 1 && presidente
+      errors.add(:presidente, ": Solamente puede haber un presidente. Verifique por favor")
+    end
+    
+  end
 
   def self.cumplen
     miembros = Member.all
     @cumpleaneros = []
+    
+    # Next block is an example of WHAT DOESN'T WORK
+    #  Gem 'birthday' just doesn't work
+    # Member.find_birthdays_for(Date.today)
+    #        or
+    # miembros.each do |miembro|
+    #   @cumpleaneros << miembro if  miembro.birthday_today? 
+    # end
+    # Next code is what did work on version 1
     Time::DATE_FORMATS[:d_and_m] = '%d %b'
     fecha_hoy = Time.now.to_formatted_s(:d_and_m)
     miembros.each do |miembro|
