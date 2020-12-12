@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reconocimiento: 2020-12-10
+  servicio_reconocido: 1
+  member: one
+
+two:
+  reconocimiento: 2020-12-10
+  servicio_reconocido: 1
+  member: two

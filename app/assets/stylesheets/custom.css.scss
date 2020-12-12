@@ -200,6 +200,9 @@ h2 {
 
 
 /* Forms */
+label.col-sm-4.form-control-label{
+text-align: right;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;

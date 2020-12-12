@@ -2,39 +2,83 @@
 <%= render 'shared/error_messages', object: f.object %>
 
   <div class="form-group row">
-    <%= f.label :numero, class: "col-sm-2 form-control-label" %>
-    <div class="col-sm-10">
+    <%= f.label :numero, class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-2">
       <%= f.number_field :numero, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :nombre, class: "col-sm-2 form-control-label" %>
-    <div class="col-sm-10">
+    <%= f.label :nombre, class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-8">
       <%= f.text_field :nombre, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :email, class: "col-sm-2 form-control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :email, class: "form-control" %>
+    <%= f.label :email, class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-8">
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+  </div>
+
+    <div class="form-group row">
+      <%= f.label :presidente, class: "col-sm-4 form-control-label" %>
+      <div class="col-sm-2">
+        <%= f.check_box :presidente, class: "form-control" %>
+      </div>
+    </div>
+
+  <div class="form-group row">
+    <%= f.label :fechaNacimiento, "Fecha de Nacimiento", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4">
+      <%= f.date_select :fechaNacimiento, discard_year: true, class: "form-control form-fecha" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :fechaNacimiento, "Fecha de Nacimiento", class: "col-sm-2 form-control-label" %>
-    <div class="col-sm-10">
-      <%= f.date_select :fechaNacimiento, discard_year: true, class: "form-control" %>
+    <%= f.label :fiat_supernumerario, "Fecha de Fiat Supernumerario", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4" >
+      <%= f.date_field :fiat_supernumerario, class: "form-control form-fecha" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :presidente, class: "col-sm-2 form-control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :presidente, class: "form-control" %>
+    <%= f.label :fiat_notario_titular, "Fecha de Fiat Notario Titular", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4">
+      <%= f.date_field :fiat_notario_titular, class: "form-control form-fecha" %>
     </div>
   </div>
+
+  <div class="form-group row">
+    <%= f.label :asamblea_aceptacion, "Fecha de Asasamblea de Aceptación", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4">
+      <%= f.date_field :asamblea_aceptacion, class: "form-control form-fecha" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :inicio_ejercicio, "Fecha de Inicio de Ejercicio", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4">
+      <%= f.date_field :inicio_ejercicio, class: "form-control form-fecha" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :revocacion_fiat, "Fecha de Revocación de Fiat", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-4">
+      <%= f.date_field :revocacion_fiat, class: "form-control form-fecha" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :motivo_revocacion, "Motivo de la Revocación", class: "col-sm-4 form-control-label" %>
+    <div class="col-sm-8">
+      <%= f.text_field :motivo_revocacion, class: "form-control" %>
+    </div>
+  </div>
+
+  <hr>
 
   <div class="actions">
     <%= f.submit "Guardar", class: "btn btn-default" %>

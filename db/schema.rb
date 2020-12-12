@@ -10,31 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211221537) do
+ActiveRecord::Schema.define(version: 2020_12_10_225047) do
+
+  create_table "licencias", force: :cascade do |t|
+    t.date "inicio"
+    t.date "final"
+    t.integer "secuencia"
+    t.integer "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_licencias_on_member_id"
+  end
 
   create_table "members", force: :cascade do |t|
-    t.integer  "numero"
-    t.string   "nombre"
-    t.string   "email"
-    t.date     "fechaNacimiento"
-    t.boolean  "presidente"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer "numero"
+    t.string "nombre"
+    t.string "email"
+    t.date "fechaNacimiento"
+    t.boolean "presidente"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "fiat_supernumerario"
+    t.date "fiat_notario_titular"
+    t.date "asamblea_aceptacion"
+    t.date "inicio_ejercicio"
+    t.date "revocacion_fiat"
+    t.string "motivo_revocacion"
   end
 
   create_table "mensajes", force: :cascade do |t|
-    t.string   "tipo"
-    t.text     "texto"
+    t.string "tipo"
+    t.text "texto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "reconocimientos", force: :cascade do |t|
+    t.date "reconocimiento"
+    t.integer "servicio_reconocido"
+    t.integer "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_reconocimientos_on_member_id"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "password_digest"
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

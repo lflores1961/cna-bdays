@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inicio: 2020-12-10
+  final: 2020-12-10
+  secuencia: 1
+  member: one
+
+two:
+  inicio: 2020-12-10
+  final: 2020-12-10
+  secuencia: 1
+  member: two
