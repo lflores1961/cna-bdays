@@ -10,12 +10,14 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
+    @licencias = @member.licencias
+    @reconocimientos = @member.reconocimientos
   end
 
   # POST /members/import
   def import
     Member.import(params[:file])
-    flash[:success] = 'Se ha importado exitosamente el archivo de Notarios a la bse de datos.'
+    flash[:success] = 'Se ha importado exitosamente el archivo de Notarios a la base de datos.'
     redirect_to members_path
   end
 
@@ -71,6 +73,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:numero, :nombre, :email, :fechaNacimiento, :presidente)
+      params.require(:member).permit(:numero, :nombre, :email, :fechaNacimiento, :presidente, :fiat_supernumerario, :fiat_notario_titular, :asamblea_aceptacion, :inicio_ejercicio, :revocacion_fiat, :motivo_revocacion)
     end
 end

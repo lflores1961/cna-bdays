@@ -69,6 +69,8 @@ a:active {
 .bg-1 {
   background-color: $my-green; /* Green */
   color: #FFE4B5;
+  border-radius: 5px;
+  height: 90px;
 }
 
 .bg-2 {
@@ -86,8 +88,9 @@ a:active {
 .btn-xs {
     color: #FFE4B5;
     background-color: $gray-light;
-    padding: 2px;
-    padding-top: 1px;
+    margin-left: 2px;
+    //padding: 2px;
+    // padding-top: 1px;
     padding-bottom: 1px;
     a:link {
       color: $my-green;
@@ -98,6 +101,20 @@ a:active {
   color: #FFE4B5;
   background-color: $my-green;
   border-color: $my-green;
+  margin: 5px;
+}
+
+.btn-in-table {
+  background: #f5c59d;
+  color: #D2691E;
+  border-color: #dfb474;
+  margin: 5px;
+  width: 80%;
+}
+
+.btn-in-table:hover {
+  background: #D2691E;
+  color: #f5c59d;
 }
 
 .cust-button {
@@ -106,12 +123,10 @@ a:active {
 }
 
 .button:visited {
-    color: auto;
+    color: black;
 }
 
 /* footer */
-
-
 
 .field-tm {
   color: #ffffff;
@@ -126,10 +141,30 @@ table, th, td {
 }
 
 table {
+    font-size: smaller;
     border-spacing: 10px;
     background-color: $my-green;
     margin-top: auto;
     margin-bottom: 20px;
+    // display: inline-flex;
+    .list_line_odd {
+      background: #f5c59d;
+      color: #D2691E;
+    }
+    .list_line_even{
+      background: #D2691E;
+      color: #f5c59d;
+    }
+    th {
+      color:  #f3f1ef;
+      text-align: center;
+    }
+    .last-lines td {
+      background: #D2691E;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 600;
+    }
 }
 
 table.center {
@@ -137,11 +172,45 @@ table.center {
   margin-right: auto;
 }
 
-th,td {
-    background-color: $my-green;
-    color: #FFE4B5;
+td {
+    // background-color: $my-green;
+    //color: #FFE4B5;
     text-align: left;
+    
   }
+
+// This is a table for vertical model display
+table#vertical {
+  font-size: 12px;
+  border-spacing: 10px;
+  background-color: $my-green;
+  margin-top: auto;
+  margin-bottom: 20px;
+  display: inline-flex;
+  .list_line_odd {
+    background: #f5c59d;
+    color: #D2691E;
+  }
+  .list_line_even{
+    background: #D2691E;
+    color: #f5c59d;
+  }
+  th {
+    color:  #FFE4B5;
+  }
+  .last-lines td {
+    background: #D2691E;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+  }
+  a {
+    color:#D2691E;
+  }
+  a:hover {
+    color: #ffffff;
+  }
+}
 
 p#notice {
   color: $my-green;
@@ -199,6 +268,7 @@ h2 {
 }
 
 
+
 /* Forms */
 label.col-sm-4.form-control-label{
 text-align: right;
@@ -208,10 +278,12 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   background-color: $gray-light;
   width: auto;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   border-radius: 5px;
   color: #ffffff;
-  @include box_sizing;
+  height: 29px;
+  padding: 0px 0px;
+  // @include box_sizing;
 }
 
 input {
@@ -246,6 +318,23 @@ input {
   margin-right: 5px;
 }
 
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
 /* Miscelaneous */
 
 .debug_dump {
@@ -255,3 +344,30 @@ input {
   margin-top: 45px;
   @include box-sizing;
 }
+
+.licencias {
+  // display: none;
+  // height: 0px;
+  background: #D2691E;
+  color: #f5c59d;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.reconocimientos {
+  // display: none;
+  // height: 0px;
+  background: #D2691E;
+  color: #f5c59d;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+// .licencias-swtch:click div.licencias {
+//   display: flexbox;
+//   // height: 100px;
+// } 

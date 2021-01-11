@@ -17,4 +17,5 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'licencia', 'licencias'
+  inflect.irregular 'reconocimiento', 'reconocimientos'
 end

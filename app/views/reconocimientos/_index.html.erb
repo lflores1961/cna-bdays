@@ -1,0 +1,21 @@
+<h3>Reconocimientos</h3>
+  <table class="reconocimientos">
+    <% cont = 0 %>
+    <thead>
+      <tr>
+        <td>Sec.</td>
+        <td>Fecha entrega</td>
+        <td>Años de servicio</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reconocimientos.each do |recon| %>
+        <tr>
+          <% cont += 1 %>
+          <td><%= cont %></td>
+          <td><%= recon.reconocimiento%></td>
+          <td><%= recon.servicio_reconocido%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

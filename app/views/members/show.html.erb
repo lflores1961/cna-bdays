@@ -3,41 +3,73 @@
   <div class="row">
     <p id="notice"><%= notice %></p>
     <h2>Datos del Notario</h2>
-    <div class="col-md-4">
-
-    </div>
     <div class="col-md-6">
-      <table>
-        <tr>
+      <table id="vertical">
+        <tr class="list_line_even">
           <td><strong>Numero:</strong></td>
           <td><%= @member.numero %></td>
         </tr>
-        <tr>
+        <tr class="list_line_odd">
           <td><strong>Nombre:</strong></td>
           <td><%= @member.nombre %></td>
         </tr>
-        <tr>
+        <tr class="list_line_even">
           <td><strong>Email:</strong></td>
           <td><%= @member.email %></td>
         </tr>
-        <tr>
+        <tr class="list_line_odd">
           <td><strong>Fecha de nacimiento:</strong></td>
           <td><%= @member.fechaNacimiento.to_formatted_s(:short) %></td>
         </tr>
-        <tr>
+        <tr class="list_line_even">
           <td><strong>Presidente:</strong></td>
           <% presi = @member.presidente ? "Si" : "No" %>
           <td><%= presi %></td>
         </tr>
+        <tr class="list_line_odd">
+          <td><strong>Fecha de Fiat Supernumerario:</strong></td>
+          <td><%= @member.fiat_supernumerario.to_formatted_s(:db) %></td>
+        </tr>
+        <tr class="list_line_even">
+          <td><strong>Fecha de Fiat Notario Titular:</strong></td>
+          <td><%= @member.fiat_notario_titular.to_formatted_s(:db) %></td>
+        </tr>
+        <tr class="list_line_odd">
+          <td><strong>Fecha de Asamblea de Aceptación:</strong></td>
+          <td><%= @member.asamblea_aceptacion.to_formatted_s(:db) %></td>
+        </tr>
+        <tr class="list_line_even">
+          <td><strong>Fecha de Inicio de Ejercicio:</strong></td>
+          <td><%= @member.inicio_ejercicio.to_formatted_s(:db) %></td>
+        </tr>
+        <% if !@member.revocacion_fiat.nil? %>
+          <tr class="list_line_odd">
+            <td><strong>Fecha de Revocación de Fiat:</strong></td>
+            <td><%= @member.revocacion_fiat.to_formatted_s(:db) %></td>
+          </tr>
+          <tr class="list_line_even">
+            <td><strong>Motivo de Revocación de Fiat:</strong></td>
+            <td><%= @member.motivo_revocacion %></td>
+          </tr>
+        <% end %>
+        <tr class="last-lines">
+          <td colspan="2">
+            <%= link_to 'Agregar Licencias', licenciar_path(@member), class: "btn btn-in-table" %>
+          </td>
+        </tr>
+        <tr class="last-lines">
+          <td colspan="2">
+            <%= link_to 'Agregar Reconocimientos', reconocer_path(@member), class: "btn btn-in-table" %>
+          </td>
+        </tr>
       </table>
     </div>
-    <div class="col-md-2">
-      <p>Navegación</p>
-      <nav class="nav flex-column">
-        <%= link_to 'Notarios', members_path, class: "nav-link" %><br>
-        <%= link_to 'Inicio', root_path, class: "nav-link" %>
-      </nav>
+    <div class="col-md-6">
+      <%= render '/licencias/index' %>
+      <%= render '/reconocimientos/index' %>
     </div>
   </div>
   <%= link_to 'Modificar', edit_member_path(@member), class: "btn btn-default" %>
+</div>
+<div class="form-popup" id="myForm">
 </div>

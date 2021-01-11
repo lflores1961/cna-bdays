@@ -1,0 +1,16 @@
+<%= form_for(@reconocimiento) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <hr>
+  <div class="center">
+    <%= f.label :reconocimiento, "Fecha de entrega de Reconocimiento", class: "form-control-label" %>
+    <%= f.date_field :reconocimiento, class: "form-control form-fecha" %>
+    <%= f.label :servicio_reconocido, "Años Reconocidos", class: "form-control-label" %>
+    <%= f.number_field :servicio_reconocido, class: "form-control form-fecha" %>
+    <%= f.hidden_field :member_id, :value => params[:member_id] %>
+
+    <div class="actions">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h3>Licencias</h3>
+  <table class="licencias">
+    <% cont = 0 %>
+    <thead>
+      <tr>
+        <td>Sec.</td>
+        <td>Inicio</td>
+        <td>Final</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @licencias.each do |licencia| %>
+        <tr>
+          <% cont += 1 %>
+          <td><%= cont %></td>
+          <td><%= licencia.inicio%></td>
+          <td><%= licencia.final%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

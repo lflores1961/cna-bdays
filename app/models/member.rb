@@ -4,6 +4,8 @@ class Member < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 69 }, format: { with: VALID_EMAIL_REGEX }
   validate :only_one_president_allowed
+  has_many :licencias
+  has_many :reconocimientos
   # acts_as_birthday :fechaNacimiento
 
   # validates :numero, uniqueness: 

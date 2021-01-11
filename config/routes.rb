@@ -1,5 +1,11 @@
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :reconocimientos, except: :new
+  get 'members/:member_id/reconocer' => 'reconocimientos#new', as: :reconocer 
+
+  resources :licencias, except: :new
+  get 'members/:member_id/licenciar' => 'licencias#new', as: :licenciar
+  
   resources :members do
     collection { post :import }
   end
