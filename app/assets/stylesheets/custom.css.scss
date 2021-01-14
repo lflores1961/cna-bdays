@@ -51,12 +51,21 @@ footer {
   }
 }
 
-a:link {
-  color: #FFE4B5;
+.glyphicon {
+  color: #6b6968;
+  font-size: 12x;
 }
 
-a:active {
-  color: white;
+.glyphicon:hover {
+  color:#cec6c2;
+}
+
+.glyphicon:visited {
+  color:#6b6968;
+}
+
+.glyphicon:visited:hover {
+  color:#cec6c2;
 }
 
 .center {

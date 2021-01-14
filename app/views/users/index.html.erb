@@ -10,7 +10,7 @@
       <p>El usuario en el primer renglón recibirá copia de las notificaciones de cumpleaños.</p>
     </div>
     <div class="col-md-7">
-      <table>
+      <table class="center">
         <thead>
           <tr>
             <th>Name</th>
@@ -21,7 +21,7 @@
 
         <tbody>
           <% @users.each do |user| %>
-            <tr>
+            <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
               <td><%= user.name %></td>
               <td><%= user.email %></td>
               <td><%= link_to '', edit_user_path(user), class: "glyphicon glyphicon-edit" %></td>
@@ -30,14 +30,10 @@
           <% end %>
         </tbody>
       </table>
+      <%= link_to 'Agregar usuario', new_user_path, class: "btn btn-default" %>
     </div>
     <div class="col-md-2">
-      <p>Navegación</p>
-      <nav class="nav flex-column">
-        <%= link_to 'Inicio', root_path, class: "nav-link" %><br>
-      <br><p>Acciones</p>
-      <%= link_to 'Agregar usuario', new_user_path, class: "btn btn-default" %>
-      </nav>
+      
     </div>
   </div>
 

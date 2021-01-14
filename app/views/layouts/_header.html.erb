@@ -11,7 +11,7 @@
           <%= link_to "Salir de sesión", logout_path, method: "delete", class: "navbar-right btn btn-xs" %>
           <% if params[:controller] != "static_pages" %>
             <%= link_to "Inicio",root_path, class: "navbar-right btn btn-xs" %>
-            <% if params[:action] == "show" || params[:action] == "edit" %>
+            <% if params[:action] != "home" %>
               <%= link_to "Anterior",request.referer, class: "navbar-right btn btn-xs" %>
             <% end %>
           <% end %>
