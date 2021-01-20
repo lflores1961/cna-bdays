@@ -1,12 +1,17 @@
 <%= form_for(@licencia) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <hr>
-  <%= f.label :inicio, "Fecha de Inicio", class: "form-control-label" %>
-  <%= f.date_field :inicio, class: "form-control form-fecha" %>
-  <%= f.label :final, "Fecha de término", class: "form-control-label" %>
-  <%= f.date_field :final, class: "form-control form-fecha" %>
-  <%= f.hidden_field :member_id, :value => params[:member_id] %>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-default" %>
+  
+  <div class="col-sm-5">
+  </div>
+  <div class="col-sm-2">
+    <hr>
+    <%= f.label :inicio, "Fecha de Inicio", class: "form-control-label" %>
+    <%= f.date_field :inicio, class: "form-control form-fecha" %>
+    <%= f.label :final, "Fecha de término", class: "form-control-label" %>
+    <%= f.date_field :final, class: "form-control form-fecha" %>
+    <%= f.hidden_field :member_id, :value => params[:member_id] %>
+    <div class="actions">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
   </div>
 <% end %>

@@ -1,6 +1,8 @@
 class Licencia < ApplicationRecord
+  # include Validators::LapseValidator
   belongs_to :member
   validate :date_ordinality
+  validates_with Validators::LapseValidator
   default_scope { order('inicio ASC') }
   # Ex:- scope :active, -> {where(:active => true)}
 

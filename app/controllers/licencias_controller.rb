@@ -4,6 +4,7 @@ class LicenciasController < ApplicationController
   # before_action :set_secuencia, only: [:create]
 
   def index
+    redirect_to controller: 'members', action: 'index'
   end
 
   def new
@@ -13,7 +14,7 @@ class LicenciasController < ApplicationController
   end
 
   def create
-    @member = Member.find_by(id: params[:licencia][:member_id])
+    @member = Member.find_by(id: params[:licencia][:member_id] || params[:licencia][:parameters][:member_id])
     # ultimo_en_secuencia = @member.licencias.any? ? @member.licencias.last.secuencia : 0
     @licencia = @member.licencias.build(licencia_params)
     # @licencia.secuencia = ultimo_en_secuencia + 1
@@ -22,7 +23,10 @@ class LicenciasController < ApplicationController
       flash[:success] = "Se ha registrado exitosamente la Licencia."
       redirect_to members_path
     else
-      render :new
+      puts "******* @member.id: #{@member.id}"
+      puts "####### errors: #{@licencia.errors[:base]}"
+      flash[:danger] = @licencia.errors[:base]
+      redirect_to licenciar_url(@member)
     end
   end
   
