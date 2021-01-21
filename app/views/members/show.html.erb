@@ -42,12 +42,16 @@
           <td><strong>Fecha de Inicio de Ejercicio:</strong></td>
           <td><%= @member.inicio_ejercicio.to_formatted_s(:db) %></td>
         </tr>
+        <tr class="list_line_odd">
+          <td><strong>Años de servicio:</strong></td>
+          <td style="text-align:center;"><%= @member.total_service_time %></td>
+        </tr>
         <% if !@member.revocacion_fiat.nil? %>
-          <tr class="list_line_odd">
+          <tr class="list_line_even">
             <td><strong>Fecha de Revocación de Fiat:</strong></td>
             <td><%= @member.revocacion_fiat.to_formatted_s(:db) %></td>
           </tr>
-          <tr class="list_line_even">
+          <tr class="list_line_odd">
             <td><strong>Motivo de Revocación de Fiat:</strong></td>
             <td><%= @member.motivo_revocacion %></td>
           </tr>

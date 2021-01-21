@@ -29,6 +29,11 @@ class Member < ApplicationRecord
     
   end
 
+  def total_service_time
+    end_time = revocacion_fiat || Date.today
+    return (((end_time - inicio_ejercicio) - licence_time).to_i) / 365
+  end
+
   def self.cumplen
     miembros = Member.all
     @cumpleaneros = []
@@ -85,5 +90,13 @@ class Member < ApplicationRecord
     # Converts email to lowercase
     def downcase_email
       email.downcase!
+    end
+
+    def licence_time
+      total_time = 0
+      self.licencias.each do |l|
+        total_time += (l.final - l.inicio).to_i
+      end
+      return total_time
     end
 end

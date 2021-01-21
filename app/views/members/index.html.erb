@@ -16,6 +16,7 @@
             <th>Fecha de Fiat Titular</th>
             <th>Fecha de asamblea de aceptación</th>
             <th>Fecha de Inicio de Ejercicio</th>
+            <th>Años de servicio</th>
             <th colspan="5">Acciones</th>
           </tr>
         </thead>
@@ -32,6 +33,7 @@
               <td><%= member.fiat_notario_titular.to_formatted_s(:db)  %></td>
               <td><%= member.asamblea_aceptacion.to_formatted_s(:db)  %></td>
               <td><%= member.inicio_ejercicio.to_formatted_s(:db)  %></td>
+              <td style="text-align: center;"><%= member.total_service_time %></td>
               <td><%= link_to '', member, class: "glyphicon glyphicon-eye-open" %></td>
               <td><%= link_to '', edit_member_path(member), class: "glyphicon glyphicon-edit" %></td>
               <td><%= link_to '', member, class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: '¿Está seguro?' } %></td>
