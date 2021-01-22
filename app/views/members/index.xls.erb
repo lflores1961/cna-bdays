@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Número</Data></Cell>
+        <Cell><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell><Data ss:Type="String">e-mail</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Nacimiento</Data></Cell>
+        <Cell><Data ss:Type="String">Presidencia?</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Fiat Supernumerario</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Fiat Notario Titular</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Asamblea de aceptación</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Inicio de Ejercicio</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Revocación de Fiat</Data></Cell>
+        <Cell><Data ss:Type="String">Motivo de Revocación</Data></Cell>
+        <Cell><Data ss:Type="String">Años de Servicio</Data></Cell>
+      </Row>
+    <% @members.each do |notario| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= notario.numero %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.nombre %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.fechaNacimiento.to_formatted_s(:short).to_s %></Data></Cell>
+        <% presi = notario.presidente ? "Si" : "No" %>
+        <Cell><Data ss:Type="String"><%= presi %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.fiat_supernumerario.to_formatted_s(:db).to_s %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.fiat_notario_titular.to_formatted_s(:db).to_s %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.asamblea_aceptacion.to_formatted_s(:db).to_s %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= notario.inicio_ejercicio.to_formatted_s(:db).to_s %></Data></Cell>
+        <% if !notario.revocacion_fiat.nil? %>
+          <Cell><Data ss:Type="String"><%= notario.revocacion_fiat.to_formatted_s(:db).to_s %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= notario.motivo_revocacion %></Data></Cell>
+        <% else %>
+          <Cell><Data ss:Type="String"><%= "N/A" %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= "N/A" %></Data></Cell>
+        <% end %>
+        <Cell><Data ss:Type="Number"><%= notario.total_service_time %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

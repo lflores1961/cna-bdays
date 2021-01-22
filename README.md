@@ -1,6 +1,7 @@
-# Happy Birthday email sender app
+# Age management for college members
 
-This application will automatically send a birthday congratulations mail to members of the Database
+This application helps manage aging for college members, birthday notifications and service years less time off lapses. 
+The app will automatically send a birthday congratulations mail to members of the Database
 and notifications to all the rest of the members.
 
 ## Getting started

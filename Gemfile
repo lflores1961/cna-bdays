@@ -4,6 +4,10 @@ ruby "2.4.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails',                       '~> 5.1'
+# Require 'roo for CSV and Excell upload and download
+gem 'roo'
+# Require iconv for excell file manipulation
+gem 'iconv'
 # To avoid "`require': cannot load such file -- bootsnap/setup (LoadError)"
 #  as per "https://stackoverflow.com/questions/51493625/new-to-rails-rails-server-error-cannot-load-such-file-bootsnap-setup-load"
 gem 'bootsnap'
