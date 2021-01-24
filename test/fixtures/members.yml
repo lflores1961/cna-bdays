@@ -6,6 +6,12 @@ one:
   email: juan@example.com
   fechaNacimiento: 2017-02-07
   presidente: false
+  fiat_supernumerario: 2021-01-01
+  fiat_notario_titular: 2021-01-02
+  asamblea_aceptacion: 2021-01-03
+  inicio_ejercicio: 2021-01-04
+  revocacion_fiat: 2021-01-05
+  motivo_revocacion: "N/A"
 
 two:
   numero: 2
@@ -13,6 +19,12 @@ two:
   email: pedro@example.com
   fechaNacimiento: 2017-02-07
   presidente: false
+  fiat_supernumerario: 2021-01-01
+  fiat_notario_titular: 2021-01-02
+  asamblea_aceptacion: 2021-01-03
+  inicio_ejercicio: 2021-01-04
+  revocacion_fiat: 2021-01-05
+  motivo_revocacion: "N/A"
 
 three:
   numero: 3
@@ -20,3 +32,9 @@ three:
   email: carlos@example.com
   fechaNacimiento: 2017-05-03
   presidente: true
+  fiat_supernumerario: 2021-01-01
+  fiat_notario_titular: 2021-01-02
+  asamblea_aceptacion: 2021-01-03
+  inicio_ejercicio: 2021-01-04
+  revocacion_fiat: 2021-01-05
+  motivo_revocacion: "N/A"

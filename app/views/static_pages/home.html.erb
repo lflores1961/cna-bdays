@@ -2,18 +2,27 @@
 <%# logged_in is hard wired in ApplicationHelper %>
 <% if logged_in? %>
 <div class="container-fluid">
+<div>
+<h2>Menú principal</h2>
+</div>
   <div class="row">
     <% @options.each do |opcion| %>
       <div class="col-md-12">
         <%= link_to opcion[:letrero], eval(opcion[:ruta]), class: "btn btn-default cust-button" %>
       </div>
     <% end %>
+    <div class="row">
+      <br>
+      <br>
+      <br>
+    </div>
   </div>
 </div>
 
 <% else %>
-  <div class="center jumbotron">
-        <h1>Correo automatizado de felicitaciones</h1>
-
+  <div class="jumbotron center">
+    <p>
+      <h1>Gestión de Membresías</h1>
+    </p>
   </div>
 <% end %>

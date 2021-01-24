@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class MembersControllerTest < ActionDispatch::IntegrationTest
-  setup do
+  
+  def setup
     @member = members(:one)
   end
 
