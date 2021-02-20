@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_225047) do
+ActiveRecord::Schema.define(version: 2021_02_19_225310) do
 
   create_table "licencias", force: :cascade do |t|
     t.date "inicio"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_225047) do
     t.date "inicio_ejercicio"
     t.date "revocacion_fiat"
     t.string "motivo_revocacion"
+    t.integer "status", default: 1
   end
 
   create_table "mensajes", force: :cascade do |t|

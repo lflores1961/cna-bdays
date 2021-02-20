@@ -1,8 +1,12 @@
 class Member < ApplicationRecord
   default_scope -> { order(:numero) }
+  enum status: { pasivo: 0, activo: 1 }
   before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 69 }, format: { with: VALID_EMAIL_REGEX }
+  validates :email, presence: true, 
+                    length: { maximum: 69 }, 
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
   validate :only_one_president_allowed
   has_many :licencias, dependent: :destroy
   has_many :reconocimientos, dependent: :destroy
@@ -35,7 +39,7 @@ class Member < ApplicationRecord
   end
 
   def self.cumplen
-    miembros = Member.all
+    miembros = Member.activo
     @cumpleaneros = []
     
     # Next block is an example of WHAT DOESN'T WORK
@@ -60,7 +64,7 @@ class Member < ApplicationRecord
   def self.aniversarios
     cumpleas = Member.cumplen
     if cumpleas.any?
-      members = Member.all
+      members = Member.activo
       admin = User.first
       presi = Member.find_by(presidente: true)
       notiMSG = Mensaje.find_by(tipo: 'notificación').texto

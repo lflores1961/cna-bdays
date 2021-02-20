@@ -6,54 +6,59 @@
     <div class="col-md-6">
       <table id="vertical">
         <tr class="list_line_even">
-          <td><strong>Numero:</strong></td>
-          <td><%= @member.numero %></td>
+          <td>Numero:</td>
+          <td><strong><%= @member.numero %></strong></td>
         </tr>
         <tr class="list_line_odd">
-          <td><strong>Nombre:</strong></td>
-          <td><%= @member.nombre %></td>
+          <td>Nombre:</td>
+          <td><strong><%= @member.nombre %></strong></td>
         </tr>
         <tr class="list_line_even">
-          <td><strong>Email:</strong></td>
-          <td><%= @member.email %></td>
+          <td>Activo?:</td>
+          <% activo = @member.activo? ? "Si" : "No" %>
+          <td><strong><%= activo %></strong></td>
         </tr>
         <tr class="list_line_odd">
-          <td><strong>Fecha de nacimiento:</strong></td>
-          <td><%= @member.fechaNacimiento.to_formatted_s(:short) %></td>
+          <td>Email:</td>
+          <td><strong><%= @member.email %></strong></td>
         </tr>
         <tr class="list_line_even">
-          <td><strong>Presidente:</strong></td>
+          <td>Fecha de nacimiento:</td>
+          <td><strong><%= @member.fechaNacimiento.to_formatted_s(:short) %></strong></td>
+        </tr>
+        <tr class="list_line_odd">
+          <td>Presidente:</td>
           <% presi = @member.presidente ? "Si" : "No" %>
-          <td><%= presi %></td>
-        </tr>
-        <tr class="list_line_odd">
-          <td><strong>Fecha de Fiat Supernumerario:</strong></td>
-          <td><%= @member.fiat_supernumerario.to_formatted_s(:db) %></td>
+          <td><strong><%= presi %></strong></td>
         </tr>
         <tr class="list_line_even">
-          <td><strong>Fecha de Fiat Notario Titular:</strong></td>
-          <td><%= @member.fiat_notario_titular.to_formatted_s(:db) %></td>
+          <td>Fecha de Fiat Supernumerario:</td>
+          <td><strong><%= @member.fiat_supernumerario.to_formatted_s(:db) %></strong></td>
         </tr>
         <tr class="list_line_odd">
-          <td><strong>Fecha de Asamblea de Aceptación:</strong></td>
-          <td><%= @member.asamblea_aceptacion.to_formatted_s(:db) %></td>
+          <td>Fecha de Fiat Notario Titular:</td>
+          <td><strong><%= @member.fiat_notario_titular.to_formatted_s(:db) %></strong></td>
         </tr>
         <tr class="list_line_even">
-          <td><strong>Fecha de Inicio de Ejercicio:</strong></td>
-          <td><%= @member.inicio_ejercicio.to_formatted_s(:db) %></td>
+          <td>Fecha de Asamblea de Aceptación:</td>
+          <td><strong><%= @member.asamblea_aceptacion.to_formatted_s(:db) %></strong></td>
         </tr>
         <tr class="list_line_odd">
-          <td><strong>Años de servicio:</strong></td>
-          <td style="text-align:center;"><%= @member.total_service_time %></td>
+          <td>Fecha de Inicio de Ejercicio:</td>
+          <td><strong><%= @member.inicio_ejercicio.to_formatted_s(:db) %></strong></td>
+        </tr>
+        <tr class="list_line_even">
+          <td>Años de servicio:</td>
+          <td style="text-align:center;"><strong><%= @member.total_service_time %></strong></td>
         </tr>
         <% if !@member.revocacion_fiat.nil? %>
-          <tr class="list_line_even">
-            <td><strong>Fecha de Revocación de Fiat:</strong></td>
-            <td><%= @member.revocacion_fiat.to_formatted_s(:db) %></td>
-          </tr>
           <tr class="list_line_odd">
-            <td><strong>Motivo de Revocación de Fiat:</strong></td>
-            <td><%= @member.motivo_revocacion %></td>
+            <td>Fecha de Revocación de Fiat:</td>
+            <td><strong><%= @member.revocacion_fiat.to_formatted_s(:db) %></strong></td>
+          </tr>
+          <tr class="list_line_even">
+            <td>Motivo de Revocación de Fiat:</td>
+            <td><strong><%= @member.motivo_revocacion %></strong></td>
           </tr>
         <% end %>
         <tr class="last-lines">
