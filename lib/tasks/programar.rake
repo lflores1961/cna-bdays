@@ -5,7 +5,7 @@ namespace :programar do
     puts "****************************************"
     puts "Buscando ...."
     Member.aniversarios
-    puts "Terminando..."
+    puts "Saliendo..."
   end
 
 end

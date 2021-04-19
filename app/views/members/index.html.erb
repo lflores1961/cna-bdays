@@ -56,10 +56,10 @@
 <div class="row">
     <div class="col-md-4">
       <%= form_tag import_members_path, multipart: true, class: "navbar-form navbar-left search-form" do %>
-          <p>Importar archivo de Notarios en formato CSV</p>
-          <%= file_field_tag :file, class: "form-control" %>
-          <%= submit_tag "Importar", class: "btn btn-default" %>
-    <% end %>
+        <p>Importar archivo de Notarios en formato CSV</p>
+        <%= file_field_tag :file, class: "form-control" %>
+        <%= submit_tag "Importar", class: "btn btn-default" %>
+      <% end %>
     </div>
     <div class="col-md-4">
     </div>
