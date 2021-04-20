@@ -6,7 +6,8 @@ class MemberMailerPreview < ActionMailer::Preview
     member = Member.first
     presi = Member.find_by(presidente: true)
     mensaje = Mensaje.find_by(tipo: 'cumpleaños').texto
-    MemberMailer.cumple(member, presi, mensaje)
+    admin = User.first
+    MemberMailer.cumple(member, presi, mensaje, admin.email)
 
   end
 

@@ -70,7 +70,7 @@ class Member < ApplicationRecord
       notiMSG = Mensaje.find_by(tipo: 'notificación').texto
       cumpMSG = Mensaje.find_by(tipo: 'cumpleaños').texto
       cumpleas.each do |cumplea|
-        MemberMailer.cumple(cumplea, presi, cumpMSG).deliver_now
+        MemberMailer.cumple(cumplea, presi, cumpMSG, admin.email).deliver_now
         notifica = members.select { |item| item != cumplea }
         notifica.each do |noti|
           MemberMailer.notifica_cumple(cumplea, noti, presi, notiMSG).deliver_now

@@ -14,4 +14,10 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def self.test_email
+    users = User.all
+    UserMailer.test_email(users).deliver_now
+  end
+  
 end

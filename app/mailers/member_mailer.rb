@@ -5,11 +5,11 @@ class MemberMailer < ApplicationMailer
   #
   #   en.member_mailer.cumple.subject
   #
-  def cumple(miembro, presi, mensaje)
+  def cumple(miembro, presi, mensaje, copiar)
     @miembro = miembro
     @presi = presi
     @mensaje = mensaje
-    mail to: miembro.email, subject: "¡Feliz cumpleaños!"
+    mail to: miembro.email, cc: copiar, subject: "¡Feliz cumpleaños!"
 
   end
 
@@ -26,4 +26,5 @@ class MemberMailer < ApplicationMailer
     mail to: miembro.email, subject: "Notificación de Cumpleaños"
 
   end
+
 end
