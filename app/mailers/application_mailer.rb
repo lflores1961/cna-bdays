@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'noresponder@aniversarios.com'
+  default from: 'notificaciones@colegionotariosaguascalientes.com'
   layout 'mailer'
 end

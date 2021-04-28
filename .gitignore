@@ -34,3 +34,4 @@
 # Ignore VIM's swap files
 /.swp
 /*.swp
+sendgrid.env

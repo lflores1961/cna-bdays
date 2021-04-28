@@ -6,6 +6,8 @@ ruby "2.4.1"
 gem 'rails',                       '~> 5.1'
 # Require 'roo for CSV and Excell upload and download
 gem 'roo'
+# Reuire SendGrid gem to send mail -- THis is in app.sendgrid.com/guide/integrate/langs/ruby
+gem 'sendgrid-ruby'
 # Require iconv for excell file manipulation
 gem 'iconv'
 # To avoid "`require': cannot load such file -- bootsnap/setup (LoadError)"
