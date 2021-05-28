@@ -26,8 +26,7 @@
             <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
               <td><%= member.numero %></td>
               <td><%= member.nombre %></td>
-              <% activo = member.activo? ? "Si" : "No" %>
-              <td><%= activo %></th>
+              <td><%= member.activo? ? "Si" : "No" %></th>
               <td><%= member.email %></td>
               <td><%= member.fechaNacimiento.to_formatted_s(:short) %></td>
               <% presi = member.presidente ? "Si" : "No" %>
