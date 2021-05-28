@@ -2,6 +2,7 @@ class Member < ApplicationRecord
   default_scope -> { order(:numero) }
   enum status: { pasivo: 0, activo: 1 }
   before_save :downcase_email
+  # before_save :stringify_dates
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, 
                     length: { maximum: 69 }, 
@@ -104,6 +105,16 @@ class Member < ApplicationRecord
     def downcase_email
       email.downcase!
     end
+
+    def stringify_dates
+      fiat_supernumerario ||= ''
+      fiat_notario_titular ||= ''
+      asamblea_aceptacion ||= ''
+      inicio_ejercicio ||= ''
+      revocacion_fiat ||= ''
+      motivo_revocacion ||= ''
+    end
+    
 
     def licence_time
       total_time = 0

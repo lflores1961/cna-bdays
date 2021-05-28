@@ -23,7 +23,7 @@ numero = 100
 
 notarios = [
   {
-   nombre: 'Pepe Mamertini',
+   nombre: 'José Ma. Martini',
    email: 'mamertini@gmail.com',
    fechaNacimiento: '2020-12-03',
    presidente: false,
@@ -59,7 +59,7 @@ notarios = [
     motivo_revocacion: ''
    },
    {
-    nombre: 'Pepe El Toro',
+    nombre: 'José del Toro',
     email: 'soy.inocente@gmail.com',
     fechaNacimiento: '2020-08-23',
     presidente: false,
