@@ -28,7 +28,7 @@ gem 'bootstrap-sass',              '~> 3.4.1'
 # use simple calendar github.com/excid3/simple_calendar
 gem 'simple_calendar',             '~> 2.0'
 # Use Puma as the app server
-gem 'puma',                        '~> 3.11'
+gem 'puma',                        '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails',               '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
