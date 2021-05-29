@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Email.new('notificaciones@colegionotariosaguascalientes.com')
+  default from: 'notificaciones@colegionotariosaguascalientes.com'
   layout 'mailer'
 end
