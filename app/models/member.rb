@@ -35,6 +35,7 @@ class Member < ApplicationRecord
 
   def total_service_time
     end_time = revocacion_fiat || Date.today
+    inicio_ejercicio ||= Date.today
     return (((end_time - inicio_ejercicio) - licence_time).to_i) / 365
   end
 

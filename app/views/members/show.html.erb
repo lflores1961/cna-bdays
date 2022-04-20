@@ -33,23 +33,43 @@
         </tr>
         <tr class="list_line_even">
           <td>Fecha de Fiat Supernumerario:</td>
-          <td><strong><%= @member.fiat_supernumerario.to_formatted_s(:db) %></strong></td>
+          <% if @member.fiat_supernumerario %>
+            <td><strong><%= @member.fiat_supernumerario.to_formatted_s(:db) %></strong></td>
+          <% else %>
+            <td>(No hay registro)</td>
+          <% end %>
         </tr>
         <tr class="list_line_odd">
           <td>Fecha de Fiat Notario Titular:</td>
-          <td><strong><%= @member.fiat_notario_titular.to_formatted_s(:db) %></strong></td>
+          <% if @member.fiat_notario_titular %>
+            <td><strong><%= @member.fiat_notario_titular.to_formatted_s(:db) %></strong></td>
+          <% else %>
+            <td>(No hay registro)</td>
+          <% end %>
         </tr>
         <tr class="list_line_even">
           <td>Fecha de Asamblea de Aceptación:</td>
-          <td><strong><%= @member.asamblea_aceptacion.to_formatted_s(:db) %></strong></td>
+          <% if @member.asamblea_aceptacion %>
+            <td><strong><%= @member.asamblea_aceptacion.to_formatted_s(:db) %></strong></td>
+          <% else %>
+            <td>(No hay registro)</td>
+          <% end %>
         </tr>
         <tr class="list_line_odd">
           <td>Fecha de Inicio de Ejercicio:</td>
-          <td><strong><%= @member.inicio_ejercicio.to_formatted_s(:db) %></strong></td>
+          <% if @member.inicio_ejercicio %>
+            <td><strong><%= @member.inicio_ejercicio.to_formatted_s(:db) %></strong></td>
+          <% else %>
+            <td>(No hay registro)</td>
+          <% end %>
         </tr>
         <tr class="list_line_even">
           <td>Años de servicio:</td>
-          <td style="text-align:center;"><strong><%= @member.total_service_time %></strong></td>
+          <% if @member.total_service_time %>
+            <td style="text-align:center;"><strong><%= @member.total_service_time %></strong></td>
+          <% else %>
+            <td>(No hay registro)</td>
+          <% end %>
         </tr>
         <% if !@member.revocacion_fiat.nil? %>
           <tr class="list_line_odd">
