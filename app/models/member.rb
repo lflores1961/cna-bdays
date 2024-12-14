@@ -51,8 +51,7 @@ class Member < ApplicationRecord
     #   @cumpleaneros << miembro if  miembro.birthday_today? 
     # end
     # Next code is what did work on version 1
-    Time::DATE_FORMATS[:d_and_m] = '%d %b'
-    fecha_hoy = Time.now.to_formatted_s(:d_and_m)
+    fecha_hoy = Date.today.to_formatted_s(:short)
     miembros.each do |miembro|
       if miembro.fechaNacimiento.to_formatted_s(:short) == fecha_hoy
         @cumpleaneros << miembro
@@ -60,6 +59,39 @@ class Member < ApplicationRecord
     end
     return @cumpleaneros
   end
+  
+  # Este metodo de clase se utiliza así: Member.emergencia(Date.yesterday)
+  # Es importante mandar una fecha como argumento
+  # Se puede usar en la consola de Heroku
+  def self.emergencia(fecha)
+    miembros = Member.activo
+    cumpleas = []
+
+    birth_date = fecha.to_formatted_s(:short)
+    miembros.each do |miembro|
+      if miembro.fechaNacimiento.to_formatted_s(:short) == birth_date
+        cumpleas << miembro
+      end
+    end
+
+    if cumpleas.any?
+      members = Member.activo
+      admin = User.first
+      presi = Member.find_by(presidente: true)
+      notiMSG = Mensaje.find_by(tipo: 'notificación').texto
+      cumpMSG = Mensaje.find_by(tipo: 'cumpleaños').texto
+      cumpleas.each do |cumplea|
+        MemberMailer.cumple(cumplea, presi, cumpMSG, admin.email).deliver_now
+        notifica = members.select { |item| item != cumplea }
+        notifica.each do |noti|
+          MemberMailer.notifica_cumple(cumplea, noti, presi, notiMSG).deliver_now
+        end
+        MemberMailer.notifica_cumple(cumplea, admin, presi, notiMSG).deliver_now
+      end
+    end
+      
+  end
+  
 
   # Do the birthay notifications
   def self.aniversarios

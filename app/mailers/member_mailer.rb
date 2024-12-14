@@ -11,7 +11,7 @@ class MemberMailer < ApplicationMailer
     @miembro = miembro
     @presi = presi
     @mensaje = mensaje
-    mail to: miembro.email, cc: copiar, subject: "¡Feliz cumpleaños!"
+    mail from: 'notificaciones@colegionotariosaguascalientes.com', to: miembro.email, cc: copiar, subject: "¡Feliz cumpleaños!"
 
   end
 
@@ -25,7 +25,7 @@ class MemberMailer < ApplicationMailer
     @miembro = miembro
     @presi = presi
     @mensaje = mensaje
-    mail to: miembro.email, subject: "Notificación de Cumpleaños"
+    mail from: 'notificaciones@colegionotariosaguascalientes.com', to: miembro.email, subject: "Notificación de Cumpleaños"
 
   end
 
